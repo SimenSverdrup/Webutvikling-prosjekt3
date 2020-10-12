@@ -1,0 +1,38 @@
+.movieBox {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color: #EEEEEE;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#movieBox_grid {
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+}
+
+#movieBox_cover {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#movieBox_grid h3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#movieBox_grid > p {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+#movieBox_icon {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}

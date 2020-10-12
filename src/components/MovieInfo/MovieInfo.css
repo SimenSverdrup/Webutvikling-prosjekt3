@@ -1,0 +1,9 @@
+#movieInfo {
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    background-color: #EEEEEE;
+    margin-top: 20px;
+    border-radius: 5px;
+}
