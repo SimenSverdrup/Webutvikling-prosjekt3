@@ -8,6 +8,7 @@ app.use(json())
 app.use(movieRouter)
 
 const uri = 'mongodb://myusername:mypassword@it2810-19.idi.ntnu.no/27017/test'
+//const uri = 'mongodb://myusername:mypassword@it2810-19.idi.ntnu.no:27017/test/?authSource=it2810'
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
