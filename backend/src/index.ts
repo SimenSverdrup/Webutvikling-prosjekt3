@@ -7,15 +7,16 @@ const app = express()
 app.use(json())
 app.use(movieRouter)
 
-const uri = 'mongodb://myusername:mypassword@it2810-19.idi.ntnu.no/27017/test'
-//const uri = 'mongodb://myusername:mypassword@it2810-19.idi.ntnu.no:27017/test/?authSource=it2810'
+const uri = 'mongodb://admin:admin@it2810-19.idi.ntnu.no:27017/admin'
+//const uri = 'mongodb://admin:admin@it2810-19.idi.ntnu.no:27017/admin/?authSource=it2810'
+//mongodb://it2810:it2810@it2810-19.idi.ntnu.no:27017/?authSource=it2810
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
-}, () => {
-    console.log('connected to database')
+}, (error) => {
+    console.log(error)
 })
 
 app.listen(3000, () => {
