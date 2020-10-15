@@ -4,7 +4,7 @@ import { Movie } from '../models/Movie'
 
 const router = express.Router();
 
-router.get('/test/:id', [], async (req: Request, res: Response) => {
+router.get('/movie/:id', [], async (req: Request, res: Response) => {
     //const movie =
     try {
         await Movie.findById(req.params.id)
@@ -17,9 +17,9 @@ router.get('/test/:id', [], async (req: Request, res: Response) => {
     //return res.status(200).send(movie);
 })
 
-router.post('/test', async (req, res) => {
+router.post('/movie/add', async (req, res) => {
     const { title, release_year, director, genre, imdb_id } = req.body;
-    const movie = Movie.build({
+    /*const movie = Movie.build({
         title: 'Test',
         release_year: 2012,
         director: 'Nolan',
@@ -28,13 +28,14 @@ router.post('/test', async (req, res) => {
     })
     try {
         await movie.save();
-        console.log("saved to db")
+        console.log("Saved to DB")
         return res.status(201).send(movie);
     }
     catch(error) {
         console.log("Couldn't connect to DB");
         return res.status(404)
     }
+    */
 })
 
 
