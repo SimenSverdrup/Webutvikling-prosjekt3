@@ -7,3 +7,11 @@
     margin-top: 20px;
     border-radius: 5px;
 }
+
+#movieInfoTitle {
+    margin-left: 5%;
+}
+
+.movieInfoP {
+    margin-left: 6%;
+}
