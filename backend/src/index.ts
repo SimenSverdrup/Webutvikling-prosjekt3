@@ -2,21 +2,20 @@ import express from 'express';
 import mongoose from 'mongoose'
 import { json } from 'body-parser';
 import { movieRouter } from './routes/movie'
+import bodyParser from "body-parser";
 
 const app = express()
 app.use(json())
 app.use(movieRouter)
+app.use(bodyParser.json())
+// We use bodyParser to study POST requests in Postman
 
-//const uri = 'mongodb://admin:admin@it2810-19.idi.ntnu.no:27017/admin'
-const uri = 'mongodb://admin:admin@it2810-19.idi.ntnu.no:27017/admin/?authSource=admin'
-//mongodb://it2810:it2810@it2810-19.idi.ntnu.no:27017/?authSource=it2810
-
-mongoose.connect('mongodb://admin:admin@it2810-19.idi.ntnu.no:27017/admin', {
+mongoose.connect('mongodb://it2810:it2810@it2810-19.idi.ntnu.no:27017/movies', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
 }, (error) => {
-    console.log(error)
+    console.log("error: " + error)
 })
 
 const connection = mongoose.connection
