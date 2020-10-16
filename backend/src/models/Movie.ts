@@ -3,10 +3,12 @@ import mongoose from 'mongoose';
 
 interface IMovie {
     title: string;
-    release_year: number;
-    director: string;
-    genre: string;
-    imdb_id: string;
+    year: number;
+    genres: string[];
+    storyline: string;
+    posterurl: string;
+    imdbRating: number;
+    actors: string[];
 }
 
 interface movieModelInterface extends mongoose.Model<movieDoc> {
@@ -15,29 +17,37 @@ interface movieModelInterface extends mongoose.Model<movieDoc> {
 
 interface movieDoc extends mongoose.Document {
     title: string;
-    release_year: number;
-    director: string;
-    genre: string;
-    imdb_id: string;
+    year: number;
+    genres: string[];
+    storyline: string;
+    posterurl: string;
+    imdbRating: number;
+    actors: string[];
 }
 
 const movieSchema = new mongoose.Schema(
     {
         title: {
             type: String,
-            required: true
+            required: [true, 'Title field is required']
         },
-        release_year: {
+        year: {
             type: Number
         },
-        director: {
+        genres: {
+            type: [String, String, String]
+        },
+        storyline: {
             type: String
         },
-        genre: {
+        posterurl: {
             type: String
         },
-        imdb_id: {
-            type: String
+        imdbRating: {
+            type: Number
+        },
+        actors: {
+            type: [String, String, String]
         }
     },
 { collection: 'movies'}
