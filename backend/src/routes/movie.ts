@@ -35,6 +35,121 @@ router.get('/api/movies/:id', [], async (req: Request, res: Response) => {
     }
 });
 
+// GET request for getting a specific movie by title
+router.get('/api/movies/title/:title', [], async (req: Request, res: Response) => {
+    console.log("GET request by title");
+    console.log(req.params.title);
+    try {
+        await Movie.find({
+                "title": { "$regex": req.params.title, "$options": "in" }
+            }
+        )
+            .then(
+                movies => res.send(movies)
+            )
+    }
+    catch(error) {
+        res.status(404).json({message: 'not found'})
+        console.log('No movie with title: ' + req.params.title.toString());
+    }
+});
+
+// GET request for getting a specific movie by genre
+router.get('/api/movies/genre/:genre', [], async (req: Request, res: Response) => {
+    console.log("GET request by genre");
+    console.log(req.params.genre);
+    try {
+        await Movie.find({
+                "genre": { "$regex": req.params.genre, "$options": "in" }
+            }
+        )
+            .then(
+                movies => res.send(movies)
+            )
+    }
+    catch(error) {
+        res.status(404).json({message: 'not found'})
+        console.log('No movie with genre: ' + req.params.genre.toString());
+    }
+});
+
+// GET request for getting a specific movie by filtering a specific year
+router.get('/api/movies/year/equal/:year', [], async (req: Request, res: Response) => {
+    console.log("GET request by year");
+    console.log(req.params.year);
+    try {
+        await Movie.find(
+            { year: {$eq: parseInt(req.params.year)} }
+        )
+            .then(
+                movies => res.send(movies)
+            )
+    }
+    catch(error) {
+        res.status(404).json({message: 'not found'})
+        console.log('No movie with year: ' + req.params.year.toString());
+    }
+});
+
+// GET request for getting a specific movie by filtering everything greater than or equal to a specific year
+router.get('/api/movies/year/gte/:year', [], async (req: Request, res: Response) => {
+    console.log("GET request by GTE year");
+    console.log(req.params.year);
+    try {
+        await Movie.find(
+            { year: {$gte: parseInt(req.params.year)} }
+        )
+            .then(
+                movies => res.send(movies)
+            )
+    }
+    catch(error) {
+        res.status(404).json({message: 'not found'})
+        console.log('No movie with year greater than or equal to: ' + req.params.year.toString());
+    }
+});
+
+// GET request for getting a specific movie by filtering everything lesser than or equal to a specific year
+router.get('/api/movies/year/lte/:year', [], async (req: Request, res: Response) => {
+    console.log("GET request by LTE year");
+    console.log(req.params.year);
+    try {
+        await Movie.find(
+            { year: {$lte: parseInt(req.params.year)} }
+        )
+            .then(
+                movies => res.send(movies)
+            )
+    }
+    catch(error) {
+        res.status(404).json({message: 'not found'})
+        console.log('No movie with year lesser than or equal to: ' + req.params.year.toString());
+    }
+});
+
+router.get('/api/convert', [], async (req: Request, res: Response) => {
+    console.log("Convert");
+    try {
+        await Movie.find(
+            { $cond: {
+                if: { $isNumber: "$year" },
+                    then: "$year",
+                else: {
+                    $convert: {
+                            input: "$year",
+                            to: "int",
+                        }
+                }
+            }
+    })
+    }
+    catch(error) {
+        res.status(404).json({message: 'not found'})
+        console.log("Could not convert");
+    }
+});
+
+
 // PUT request to add user review to movie in the DB
 router.put('/api/movies/:id', async (req: Request, res: Response) => {
     console.log("PUT request");

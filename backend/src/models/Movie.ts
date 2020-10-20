@@ -9,6 +9,7 @@ interface IMovie {
     posterurl: string;
     imdbRating: number;
     actors: string[];
+    rating: number;
 }
 
 interface movieModelInterface extends mongoose.Model<movieDoc> {
@@ -23,6 +24,7 @@ interface movieDoc extends mongoose.Document {
     posterurl: string;
     imdbRating: number;
     actors: string[];
+    rating: number;
 }
 
 const movieSchema = new mongoose.Schema(
@@ -48,6 +50,9 @@ const movieSchema = new mongoose.Schema(
         },
         actors: {
             type: [String, String, String]
+        },
+        rating: {
+            type: Number
         }
     },
 { collection: 'movies'}
