@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 import MovieBox from './components/MovieBox/MovieBox';
-import MovieInfoBox from './components/MovieInfo/MovieInfo';
+//import MovieList from './containers/MovieList';
+import MovieInfo from './components/MovieInfo/MovieInfo';
 import SearchBar from './components/SearchBar/SearchBar';
 import Title from './components/Title/Title';
-import WatchListInfoBox from './components/WatchList/WatchList';
+import { combineReducers } from 'redux';
+
 
 function App() {
   return (
@@ -12,11 +14,13 @@ function App() {
       <Title></Title>
       <div id="grid_container">
         <SearchBar></SearchBar>
-        <MovieBox imgUrl="avengers.png" movieTitle={'Avengers: Endgame'} duration={"3 hours 1 min"} genre={"Action, Adventure, Drama"}></MovieBox>
-        <MovieBox imgUrl="avengers.png" movieTitle={'Titanic'} duration={"2 hours 4 min"} genre={"Action, Romantic, Drama"}></MovieBox>
-        <MovieBox imgUrl="avengers.png" movieTitle={'Avengers: Endgame'} duration={"3 hours 1 min"} genre={"Action, Adventure, Drama"}></MovieBox>
-        <WatchListInfoBox></WatchListInfoBox>
-        <MovieInfoBox movieTitle={'Avengers: Endgame'} duration={"3 hours 1 min"} genre={"Action, Adventure, Drama"} directors={"Anthony Russo, Joe Russo"} actor1={"Ola"} actor2={"Kari"} actor3={"Jens"}></MovieInfoBox>
+        {/*Kommenterte ut for at det skulle kjøre:*/}
+        {/*<MovieList />*/}
+        <MovieBox movieTitle={'Avengers: Endgame'} duration={"3 hours 1 min"} genre={"Action, Adventure, Drama"}></MovieBox>
+        <MovieBox movieTitle={'Titanic'} duration={"2 hours 4 min"} genre={"Action, Romantic, Drama"}></MovieBox>
+        <MovieBox movieTitle={'Avengers: Endgame'} duration={"3 hours 1 min"} genre={"Action, Adventure, Drama"}></MovieBox>
+        {/*<WatchListInfoBox></WatchListInfoBox>*/}
+        <MovieInfo movieTitle={'Avengers: Endgame'} duration={"3 hours 1 min"} genre={"Action, Adventure, Drama"} directors={"Anthony Russo, Joe Russo"} actor1={"Ola"} actor2={"Kari"} actor3={"Jens"}></MovieInfo>
       </div>
     </div>
     // Hvor mange movieBox'er skal jeg ha? Dette kommer jo an på søkeresultatet.
