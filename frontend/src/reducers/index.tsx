@@ -7,7 +7,7 @@ import SearchReducer from './reducer-movie-search';
 const allStates = combineReducers({
     select: SelectReducer,
     search_string: SearchReducer,
-    filter: FilterReducer
+    filter_params: FilterReducer
 });
 
 export default allStates;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import MovieBox from '../components/MovieBox/MovieBox';
-import allMovies from '../reducers';
 
 class MovieList extends Component {
     
@@ -15,15 +14,14 @@ class MovieList extends Component {
     // SPM: Hva referer "this" til? Hva gjør egentlig s
     
     // Kommenterer ut for at programmet skal kunne kjøre
-    /*createListItems() {
-        return this.props.movies.map((movie) => {
-            return (
-                <MovieBox movieTitle={movie.title}
-                            duration={movie.duration}
-                            genre={movie.genre}>
-                </MovieBox>
-            );
-        });
+
+    createListItems() {
+        let movies = fetch("localhost:3000/api/movies/title/" + this.props.search_string);
+
+
+        return {
+
+        }
     }
     
     
@@ -33,14 +31,15 @@ class MovieList extends Component {
                 {this.createListItems()}
             </ul>
         )
-    }*/
+    }
 }
 
 // Denne funksjonen tar inn state (en bit av store) og sender
 // det til komponenten din som en props
 function mapStateToProps(state: any) {
     return {
-        movies: state.movies
+        search_string: state.search_string,
+        filter_params: state.filter_params
     };
 }
 
