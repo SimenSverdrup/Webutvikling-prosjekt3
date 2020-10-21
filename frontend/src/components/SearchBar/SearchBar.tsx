@@ -7,7 +7,6 @@ import './SearchBar.css';
 
 
 export default function Title() {
-
     return (
         <div id="searchBar_grid_container">
             <div className="searchBar_grid">

@@ -4,14 +4,13 @@ import MovieBox from './components/MovieBox/MovieBox';
 import MovieInfo from './components/MovieInfo/MovieInfo';
 import SearchBar from './components/SearchBar/SearchBar';
 import Title from './components/Title/Title';
-import { combineReducers } from 'redux';
 import MovieList from "./containers/MovieList";
 
 
 function App() {
   return (
     <div>
-      <Title></Title>
+      <Title/>
       <div id="grid_container">
         <SearchBar />
         <MovieList />

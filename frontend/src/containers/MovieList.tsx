@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import MovieBox from '../components/MovieBox/MovieBox';
+import allStates from "../reducers/index";
 
 class MovieList extends Component {
     
@@ -36,7 +37,7 @@ class MovieList extends Component {
 
 // Denne funksjonen tar inn state (en bit av store) og sender
 // det til komponenten din som en props
-function mapStateToProps(state: any) {
+function mapStateToProps(state: typeof allStates) {
     return {
         search_string: state.search_string,
         filter_params: state.filter_params

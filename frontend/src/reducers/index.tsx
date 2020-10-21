@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import SelectReducer from './reducer-movie-select';
-import FilterReducer from './reducer-movie-filter';
-import SearchReducer from './reducer-movie-search';
+import SelectReducer from './SelectReducer';
+import FilterReducer from './FilterReducer';
+import SearchReducer from './SearchReducer';
 
 
 const allStates = combineReducers({
