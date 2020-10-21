@@ -1,8 +1,13 @@
-import {combineReducers} from 'redux';
-import moviesReducer from './reducer-movies';
+import { combineReducers } from 'redux';
+import SelectReducer from './reducer-movie-select';
+import FilterReducer from './reducer-movie-filter';
+import SearchReducer from './reducer-movie-search';
 
-const allMovies = combineReducers({
-    movies: moviesReducer //nå er alt innholdet i reduceren innholdt i "movies"-objektet/variabelen
+
+const allStates = combineReducers({
+    select: SelectReducer,
+    search_string: SearchReducer,
+    filter: FilterReducer
 });
 
-export default allMovies;
+export default allStates;

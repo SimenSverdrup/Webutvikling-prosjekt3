@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import moviesReducer from './reducers/reducer-movies';
+import allStates from "./reducers";
 
-const store = createStore(moviesReducer)
+const store = createStore(allStates)
 
 ReactDOM.render(
   <React.StrictMode>
