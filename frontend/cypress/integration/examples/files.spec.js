@@ -11,7 +11,7 @@ context('Files', () => {
   })
 
   beforeEach(() => {
-    // load example.json fixture file and store
+    // load example.json fixture file and redux
     // in the test context object
     cy.fixture('example.json').as('example')
   })
