@@ -4,7 +4,7 @@ import MovieBox from './components/MovieBox/MovieBox';
 import MovieInfo from './components/MovieInfo/MovieInfo';
 import SearchBar from './components/SearchBar/SearchBar';
 import Title from './components/Title/Title';
-import MovieList from "./components/MovieList/MovieList";
+//import MovieList from "./components/MovieList/MovieList";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Title/>
       <div id="grid_container">
         <SearchBar />
-        <MovieList />
+          {/*<MovieList />
         {/*<WatchListInfoBox></WatchListInfoBox>*/}
         {/*<MovieInfo movieTitle={'Avengers: Endgame'} duration={"3 hours 1 min"} genres={"Action, Adventure, Drama"} directors={"Anthony Russo, Joe Russo"} actor1={"Ola"} actor2={"Kari"} actor3={"Jens"}></MovieInfo>*/}
       </div>

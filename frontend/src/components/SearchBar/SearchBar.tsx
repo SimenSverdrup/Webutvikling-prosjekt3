@@ -1,16 +1,23 @@
-import React from 'react';
+import React, {useContext, useState }from 'react';
 import './SearchBar.css';
-
-//lag en fuksjon her som bruker fetch (itl databasen), men bare lær deg fetch først
-// se påtutorial for fetch (=biblioteksfunksjon for å hente data fra database elelr fra nettet osv).
-
+import { observer } from "mobx-react-lite"
+import Store from '../../mobx/store'
 
 
-export default function Title() {
+const SearchBar = () => {
+    const [search, setSearch] = useState("");
+    const store = useContext(Store);
+    const { updateSearch } = store;
+
     return (
         <div id="searchBar_grid_container">
             <div className="searchBar_grid">
-                <input type="text" placeholder="Search" onInput={() => {/* Ved søk skal jeg kalle funksjonen jeg lager ovenfor */}}/>
+                <input type="text" placeholder="Search" onInput={(element) => {
+                    //use action here, to set search string state in the store
+                    // this will trigger a re-render of MovieList automatically
+                    setSearch(element.currentTarget.value);
+                    updateSearch(search);
+                    }}/>
                 <div id="searchBar_sort" onClick={() => {/* På klikk vil jeg åpne dropdown for sortering */}}>
                     <p>Sort v</p>
                     {/*<img src="" alt="Dropdown icon"/>*/}
@@ -24,3 +31,5 @@ export default function Title() {
         </div>
     )
 }
+
+export default observer(SearchBar);

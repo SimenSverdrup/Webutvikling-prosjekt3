@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React, {useContext, Component, useState } from 'react';
+import MovieBox from '../MovieBox/MovieBox';
+/*
 import {bindActionCreators, Dispatch} from 'redux';
 import { connect, ConnectedProps } from 'react-redux'
-import MovieBox from '../MovieBox/MovieBox';
-import { reducer } from '../../redux/reducers'
-import { State } from '../../redux'
+import { State } from '../../index'
+
+import { observer } from "mobx-react-lite"
+import Store from '../../mobx/store'
+
 
 
 const mapState = (state: State) => ({
@@ -23,30 +27,19 @@ type Props = PropsFromRedux & {
 }
 
 
-const MovieGetter = (props: Props) => {
-     fetch("localhost:3000/api/movies/title/" + props.search_string)
-        .then( (res) => {
-                res.json();
-            })
-         .then( (movies) => { return movies; }
-         )
-}
 
 const MovieList = (props: Props) => {
-    let movies = MovieGetter(props);
-
-    return(
-        <ul>
-            {movies.map( (movie) => {
-            <MovieBox movieTitle={movie.title}
-                      duration={movie.duration}
-                      genres={movie.genres}
-                      imgUrl={movie.posterurl}
-                      year={movie.year}/>
-            }
+    return(fetch("localhost:3000/api/movies/title/" + props.search_string)
+        .then( (res) => {
+            res.json();
+        })
+        .then( (movies) => {
+            movies.map( (movie) =>
+                <li key={movie.title}>
+                    <MovieBox movieTitle={movie.title} duration={movie.duration} genres={movie.genres} imgUrl={movie.posterurl} year={movie.year}/>
+                </li>
         )}
-        </ul>
-    )
+    ))
 }
 
 // Denne funksjonen tar inn state (en bit av redux) og sender
@@ -60,3 +53,6 @@ function mapStateToProps(state: State) {
 
 
 export default connector(MovieList);
+
+
+ */
