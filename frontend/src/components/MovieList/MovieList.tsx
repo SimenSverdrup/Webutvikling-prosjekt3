@@ -1,51 +1,107 @@
-import React, {useContext, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import MovieBox from '../MovieBox/MovieBox';
 import { observer } from "mobx-react-lite"
 import Store from '../../mobx/store'
-import axios from 'axios';
 
 
 const MovieList = () => {
+    const startState = [{
+        title: "",
+        year: 0,
+        genres: [],
+        storyline: "",
+        posterurl: "",
+        imdbRating: 0,
+        actors: [],
+        rating: 0
+    }];
+
     const [numberOfMovies, setNumberOfMovies] = useState(5);
+    const [movies, setMovies] = useState(startState);
     const store = useContext(Store);
     const { states } = store;
 
+    useEffect( () => {
+        const fetchDataAsync = async () => {
+            if (states[0].search_string) {
+                // non-empty search string -> search for the specified title
+                console.log("non-empty string: " + states[0].search_string);
 
-    if (states[0].search_string) {
-        // non-empty search string -> search for the specified title
-        console.log("non-empty string: " + states[0].search_string);
-        let movies = fetch("http://localhost:3000/api/movies/title/" + states[0].search_string, {
-            headers: {
-                'Origin': 'http://localhost:3000'
+                await fetch("http://localhost:3000/api/movies/title/" + states[0].search_string,
+                    {
+                        method: 'GET'
+                    })
+                    .then(res => res.json())
+                    .then(movies => setMovies(movies))
+                    .catch(error => {
+                        console.log('Could not get movies from DB');
+                    });
+                let res = fetchDataAsync();
             }
-            })
-            .then( res => res.json())
-            .catch( error => {
-                console.log('Could not get movies from DB');
-            });
-    }
-    else {
-        // empty search string -> get all movies
-        console.log("empty string: " + states[0].search_string)
-        let movies = fetch("http://localhost:3000/api/movies/")
-            .then( res => res.json())
-            .catch( error => {
-                console.log('Could not get movies from DB');
-            });
-        console.log(JSON.stringify(movies));
-    }
+            else {
+                // empty search string -> get all movies
+                console.log("empty string: " + states[0].search_string)
 
+                await fetch("http://localhost:3000/api/movies/",
+                    {
+                        method: 'GET'
+                    })
+                    .then(res => res.json())
+                    .then(movies => setMovies(movies))
+                    .catch(error => {
+                        console.log('Could not get movies from DB');
+                    });
+            }
+        }
+        let movies = fetchDataAsync();
+
+
+
+
+        if (states[0].search_string) {
+            // non-empty search string -> search for the specified title
+            console.log("non-empty string: " + states[0].search_string);
+            const fetchDataAsync = async () => {
+                await fetch("http://localhost:3000/api/movies/title/" + states[0].search_string,
+                    {
+                        method: 'GET'
+                    })
+                    .then(res => res.json())
+                    .then(movies => setMovies(movies))
+                    .catch(error => {
+                        console.log('Could not get movies from DB');
+                    });
+            }
+            let res = fetchDataAsync();
+        }
+        else {
+            // empty search string -> get all movies
+            console.log("empty string: " + states[0].search_string)
+            const fetchDataAsync = async () => {
+                await fetch("http://localhost:3000/api/movies/",
+                    {
+                        method: 'GET'
+                    })
+                    .then(res => res.json())
+                    .then(movies => setMovies(movies))
+                    .catch(error => {
+                        console.log('Could not get movies from DB');
+                    });
+            }
+            let res = fetchDataAsync();
+        }
+        console.log(movies);
+    }, []);
 
     return(
-        <div></div>
-        /*
-        { movies.map( movie =>
+        <div>
+            {/* movies.map( movie =>
                 <li key={movie.title}>
                     <MovieBox id={movie._id} movieTitle={movie.title} duration={movie.duration} genres={movie.genres} imgUrl={movie.posterurl} year={movie.year}/>
                 </li>
-        )
-        }
-        */
+            )
+            */}
+        </div>
     )
 }
 

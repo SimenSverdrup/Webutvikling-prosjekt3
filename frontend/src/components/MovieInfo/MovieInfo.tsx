@@ -27,6 +27,8 @@ const MovieInfo = () => {
         });
 
     return (
+        <div></div>
+        /*
         <div id="movieInfo">
             <h3 id="movieInfoTitle">{movie.title}</h3>
             <hr/>
@@ -37,6 +39,7 @@ const MovieInfo = () => {
             <p className="movieInfo">Storyline: {movie.storyline}</p>
             <p className="movieInfo">IMDB rating: {movie.imdbRating}</p>
         </div>
+        */
     )
 }
 
