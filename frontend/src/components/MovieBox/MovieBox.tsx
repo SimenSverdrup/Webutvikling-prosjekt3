@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import './MovieBox.css';
+import { observer } from "mobx-react-lite"
+import Store from '../../mobx/store'
 
 interface Props {
+    id: string;
     movieTitle: string;
     duration: string;
     genres: string;
@@ -10,9 +13,15 @@ interface Props {
     //rating: number; // denne viser vi ikke per nå
 }
 
-export default function MovieBox(props:Props) {
+const MovieBox = (props:Props) => {
+    const store = useContext(Store);
+    const { updateSelect } = store;
+
     return (
-        <div className="movieBox" onClick={() => {/* På klikk vil jeg displaye movieInformation, altså sette select staten */}}>
+        <div className="movieBox" onClick={() => {
+            /* På klikk vil jeg displaye movieInformation, altså sette select staten */
+            updateSelect(props.id);
+        }}>
             <div id="movieBox_grid">
                 <img id="movieBox_cover" src={props.imgUrl} alt="Movie cover"/>
                 <h3>{props.movieTitle}</h3>
@@ -24,3 +33,5 @@ export default function MovieBox(props:Props) {
         </div>
     )
 }
+
+export default observer(MovieBox);

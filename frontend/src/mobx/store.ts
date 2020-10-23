@@ -24,7 +24,14 @@ class Store {
     // Actions:
     @action updateSearch = (search: string) => {
         this.states[0].search_string = search;
+        //console.log("Search updated to: " + this.states[0].search_string);
     }
+
+    @action updateSelect = (selection: string) => {
+        this.states[0].select_id = selection;
+        //console.log("Selection updated to: " + this.states[0].select);
+    }
+
 }
 
 export default createContext(new Store())
