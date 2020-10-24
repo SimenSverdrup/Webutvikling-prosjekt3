@@ -5,7 +5,6 @@ import Store from '../../mobx/store'
 
 
 const SearchBar = () => {
-    const [search, setSearch] = useState("");
     const store = useContext(Store);
     const { updateSearch } = store;
 
@@ -15,8 +14,7 @@ const SearchBar = () => {
                 <input type="text" placeholder="Search" onInput={(element) => {
                     //use action here, to set search string state in the store
                     // this will trigger a re-render of MovieList automatically
-                    setSearch(element.currentTarget.value);
-                    updateSearch(search);
+                    updateSearch(element.currentTarget.value);
                     }}/>
                 <div id="searchBar_sort" onClick={() => {/* På klikk vil jeg åpne dropdown for sortering */}}>
                     <p>Sort v</p>

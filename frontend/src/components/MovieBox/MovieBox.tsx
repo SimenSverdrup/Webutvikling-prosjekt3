@@ -5,17 +5,28 @@ import Store from '../../mobx/store'
 
 interface Props {
     id: string;
-    movieTitle: string;
+    title: string;
     duration: string;
-    genres: string;
+    genres: string[];
     imgUrl: string;
     year: number;
+    imdbRating: number;
     //rating: number; // denne viser vi ikke per nå
 }
 
 const MovieBox = (props:Props) => {
     const store = useContext(Store);
     const { updateSelect } = store;
+    let duration = props.duration.slice(2);
+    duration = duration.substring(0, duration.length - 1);
+    duration += " min";
+    let imdbRating = "Unknown";
+
+    if (props.imdbRating) {
+        imdbRating = props.imdbRating.toString();
+        imdbRating += "/10";
+    }
+
 
     return (
         <div className="movieBox" onClick={() => {
@@ -23,12 +34,13 @@ const MovieBox = (props:Props) => {
             updateSelect(props.id);
         }}>
             <div id="movieBox_grid">
-                <img id="movieBox_cover" src={props.imgUrl} alt="Movie cover"/>
-                <h3>{props.movieTitle}</h3>
-                <img id="movieBox_icon" src="../images/favourite.png" alt="Favourite icon"/>
-                <p>Duration: {props.duration}</p>
-                <p>Genre: {props.genres}</p>
+                <img id={props.id} src={props.imgUrl} alt="Missing poster" width="200" height="300"/>
+                <h3>{props.title}</h3>
+                {/*<img id="movieBox_icon" src="../images/favourite.png" alt="Favourite icon"/>*/}
+                <p>Duration: {duration}</p>
+                <p>Genre: {props.genres.join(', ')}</p>
                 <p>Year: {props.year.toString()}</p>
+                <p>IMDB Rating: {imdbRating}</p>
             </div>
         </div>
     )
