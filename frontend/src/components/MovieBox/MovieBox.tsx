@@ -14,7 +14,7 @@ interface Props {
     //rating: number; // denne viser vi ikke per nå
 }
 
-const MovieBox = (props:Props) => {
+const MovieBox = (props: Props) => {
     const store = useContext(Store);
     const { updateSelect } = store;
     let duration = props.duration.slice(2);
@@ -33,7 +33,7 @@ const MovieBox = (props:Props) => {
             /* På klikk vil jeg displaye movieInformation, altså sette select staten */
             updateSelect(props.id);
         }}>
-            <div id="movieBox_grid">
+            <div id="movieBox_grid" onClick={() => updateSelect(props.id)}>
                 <img id={props.id} src={props.imgUrl} alt="Missing poster" width="200" height="300"/>
                 <h3>{props.title}</h3>
                 {/*<img id="movieBox_icon" src="../images/favourite.png" alt="Favourite icon"/>*/}

@@ -1,14 +1,18 @@
 import React, {useContext, useEffect, useState} from 'react';
 import MovieBox from '../MovieBox/MovieBox';
-import { observer } from "mobx-react-lite"
+import { observer } from "mobx-react"
 import Store from '../../mobx/store'
 
+interface Props {
+    search_string: string
+}
 
 const MovieList = () => {
-    const [numberOfMovies, setNumberOfMovies] = useState(5);
+    //const [numberOfMovies, setNumberOfMovies] = useState(5);
     const [movies, setMovies] = useState([]);
     const store = useContext(Store);
     const { states } = store;
+
 
     useEffect( () => {
         console.log("Search string is now: " + states[0].search_string);
@@ -44,11 +48,9 @@ const MovieList = () => {
                     console.log('Could not get movies from DB');
                 });
         }
-    }, [states[0].search_string]);
+    }, [states]);
 
     useEffect( () => {
-        console.log("Search string is now: " + states[0].search_string);
-
         //console.log(movies[0]);
     }, [movies]);
 
