@@ -30,4 +30,4 @@ const SearchBar = () => {
     )
 }
 
-export default observer(SearchBar);
+export default SearchBar;

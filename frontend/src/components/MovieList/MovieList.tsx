@@ -1,17 +1,16 @@
 import React, {useContext, useEffect, useState} from 'react';
 import MovieBox from '../MovieBox/MovieBox';
-import { observer } from "mobx-react"
+import {observer, Provider} from "mobx-react"
 import Store from '../../mobx/store'
+import {get} from "mobx";
+import {useForceUpdate} from "mobx-react-lite/dist/utils/utils";
 
-interface Props {
-    search_string: string
-}
 
 const MovieList = () => {
     //const [numberOfMovies, setNumberOfMovies] = useState(5);
     const [movies, setMovies] = useState([]);
     const store = useContext(Store);
-    const { states } = store;
+    const { states, getState } = store;
 
 
     useEffect( () => {
@@ -48,11 +47,8 @@ const MovieList = () => {
                     console.log('Could not get movies from DB');
                 });
         }
-    }, [states]);
+    }, [states, getState]);
 
-    useEffect( () => {
-        //console.log(movies[0]);
-    }, [movies]);
 
     return(
         <div>
