@@ -24,8 +24,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c6bafdde-5dd0-40da-97bb-60544e42c3db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/Movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/Movie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/movie.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/containers/MovieList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/containers/MovieList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/reducers/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reducers/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/reducers/reducer-movie-filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reducers/FilterReducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/reducers/reducer-movie-search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reducers/SearchReducer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/reducers/reducer-movie-select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/reducers/SelectReducer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -121,9 +127,10 @@
     </state>
     <state x="2366" y="231" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603207677093" />
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1602513854180" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1602507359935">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="2375" y="2" width="1008" height="1037" key="search.everywhere.popup" timestamp="1603294669510">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2375" y="2" width="1008" height="1037" key="search.everywhere.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603294669510" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1602507359935" />
   </component>
 </project>

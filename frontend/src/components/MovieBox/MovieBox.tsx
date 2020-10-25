@@ -1,26 +1,49 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import './MovieBox.css';
+import { observer } from "mobx-react-lite"
+import Store from '../../mobx/store'
 
 interface Props {
-    movieTitle: string;
+    id: string;
+    title: string;
     duration: string;
-    genre: string;
-    //imgUrl: string;
-    //directors: string;
+    genres: string[];
+    imgUrl: string;
+    year: number;
+    imdbRating: number;
+    //rating: number; // denne viser vi ikke per nå
 }
 
-export default function MovieBox(props:Props) {
-    
+const MovieBox = (props: Props) => {
+    const store = useContext(Store);
+    const { updateSelect } = store;
+    let duration = props.duration.slice(2);
+    duration = duration.substring(0, duration.length - 1);
+    duration += " min";
+    let imdbRating = "Unknown";
+
+    if (props.imdbRating) {
+        imdbRating = props.imdbRating.toString();
+        imdbRating += "/10";
+    }
+
+
     return (
-        <div className="movieBox" onClick={() => {/* På klikk vil jeg displaye movieInformation */}}>
-            <div id="movieBox_grid">
-                {/*<img id="movieBox_cover" src={props.imgUrl} alt="Movie cover"/>*/}
-                <h3>{props.movieTitle}</h3>
-                <img id="movieBox_icon" src="../images/favourite.png" alt="Faviourite icon"/>
-                <p>Duration: {props.duration}</p>
-                <p>Genre: {props.genre}</p>
-                {/*<p>Directors: {props.directors}</p>*/}
+        <div className="movieBox" onClick={() => {
+            /* På klikk vil jeg displaye movieInformation, altså sette select staten */
+            updateSelect(props.id);
+        }}>
+            <div id="movieBox_grid" onClick={() => updateSelect(props.id)}>
+                <img id={props.id} src={props.imgUrl} alt="Missing poster" width="200" height="300"/>
+                <h3>{props.title}</h3>
+                {/*<img id="movieBox_icon" src="../images/favourite.png" alt="Favourite icon"/>*/}
+                <p>Duration: {duration}</p>
+                <p>Genre: {props.genres.join(', ')}</p>
+                <p>Year: {props.year.toString()}</p>
+                <p>IMDB Rating: {imdbRating}</p>
             </div>
         </div>
     )
 }
+
+export default MovieBox;

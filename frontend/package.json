@@ -11,14 +11,19 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "@types/react-redux": "^7.1.9",
+    "@types/uuid": "^8.3.0",
+    "bootstrap": "^4.5.3",
     "express": "^4.17.1",
+    "mobx": "^6.0.1",
+    "mobx-react": "^7.0.0",
+    "mobx-react-lite": "^3.0.1",
     "mongoose": "^5.10.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -28,7 +33,6 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open"
   },
-  "proxy": "http://localhost:8080",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -45,6 +49,9 @@
     ]
   },
   "devDependencies": {
+    "@types/react-redux": "^7.1.9",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
     "cypress": "^5.4.0"
   }
 }

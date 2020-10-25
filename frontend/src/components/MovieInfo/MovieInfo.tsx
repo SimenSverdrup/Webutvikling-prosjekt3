@@ -1,26 +1,49 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './MovieInfo.css';
+import { observer } from "mobx-react-lite"
+import Store from '../../mobx/store'
 
-interface Props {
-    movieTitle: string;
-    duration: string;
-    genre: string;
-    directors: string;
-    actor1: string;
-    actor2: string;
-    actor3: string;
-}
 
-export default function MovieInfo(props:Props) {
-    
+const MovieInfo = () => {
+    const [id, setId] = useState("");
+    const store = useContext(Store);
+    const { select_id } = store;
+
+
+    useEffect( () => {
+        setId(select_id);
+    }, [select_id]);
+
+    let movie = fetch("http://localhost:3000/api/movies/" + id)
+        .then( res => res.json())
+        .catch( error => {
+            console.log('Could not get selected movie from DB');
+            return {
+                title: '',
+                duration: 0,
+                genres: [],
+                year: 0,
+                actors: [],
+                storyline: '',
+                imdbRating: 0
+            }
+        });
+
     return (
+        <div></div>
+        /*
         <div id="movieInfo">
-            <h3 id="movieInfoTitle">{props.movieTitle}</h3>
+            <h3 id="movieInfoTitle">{movie.title}</h3>
             <hr/>
-            <p className="movieInfo">Duration: {props.duration}</p>
-            <p className="movieInfo">Genre: {props.genre}</p>
-            <p className="movieInfo">Directors: {props.directors}</p>
-            <p className="movieInfo">Main actors: {props.actor1}, {props.actor2}, {props.actor3}</p>
+            <p className="movieInfo">Duration: {movie.duration}</p>
+            <p className="movieInfo">Genre: {movie.genres}</p>
+            <p className="movieInfo">Year: {movie.year}</p>
+            <p className="movieInfo">Main actors: {movie.actors}</p>
+            <p className="movieInfo">Storyline: {movie.storyline}</p>
+            <p className="movieInfo">IMDB rating: {movie.imdbRating}</p>
         </div>
+        */
     )
 }
+
+export default observer(MovieInfo);
