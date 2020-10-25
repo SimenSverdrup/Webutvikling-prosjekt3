@@ -1,4 +1,5 @@
 import { observable, action, computed, reaction } from "mobx"
+import React from "react";
 import { createContext } from "react"
 
 export interface IStates {
@@ -11,31 +12,28 @@ export interface IStates {
 }
 
 class Store {
-    constructor() {
-        reaction(() => this.states, _ => console.log(this.states))
+    /*constructor() {
+        reaction(() => this.search_string, _ => console.log(this.search_string))
     }
+*/
+    // Observable state handlers
+    @observable select_id = "";
 
-    // Observable state handler
-    @observable states: IStates[] = [
-        { search_string: "", select_id: "", filter_field: "", filter_equal_to: false, filter_greater_than: false, filter_less_than: false }
-    ]
+    @observable search_string = "";
 
-    // Getter
-    @computed get getState() {
-        return this.states;
-    }
+    //@observable filter_field: "", filter_equal_to: false, filter_greater_than: false, filter_less_than: false
 
     // Actions:
     @action updateSearch = (search: string) => {
-        this.states[0].search_string = search;
-        console.log("Search updated to: " + this.states[0].search_string);
+        this.search_string = search;
+        console.log("Search updated to: " + this.search_string);
     }
 
     @action updateSelect = (selection: string) => {
-        this.states[0].select_id = selection;
-        console.log("Selection updated to: " + this.states[0].select_id);
+        this.select_id = selection;
+        console.log("Selection updated to: " + this.select_id);
     }
-
 }
+
 
 export default createContext(new Store())

@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import Title from './components/Title/Title';
 import MovieList from "./components/MovieList/MovieList";
 
+
 class App extends Component {
     render() {
         return (

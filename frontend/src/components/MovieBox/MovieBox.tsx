@@ -46,4 +46,4 @@ const MovieBox = (props: Props) => {
     )
 }
 
-export default observer(MovieBox);
+export default MovieBox;

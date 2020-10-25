@@ -4,6 +4,7 @@ import { observer } from "mobx-react-lite"
 import Store from '../../mobx/store'
 
 
+
 const SearchBar = () => {
     const store = useContext(Store);
     const { updateSearch } = store;

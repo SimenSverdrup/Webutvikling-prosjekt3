@@ -12,7 +12,6 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/uuid": "^8.3.0",
-    "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "express": "^4.17.1",
     "mobx": "^6.0.1",
@@ -25,8 +24,7 @@
     "react-scripts": "^3.4.4",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "typescript": "~3.7.2",
-    "uuid": "^8.3.1"
+    "typescript": "~3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",

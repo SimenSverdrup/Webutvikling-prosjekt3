@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './MovieInfo.css';
 import { observer } from "mobx-react-lite"
 import Store from '../../mobx/store'
@@ -7,9 +7,12 @@ import Store from '../../mobx/store'
 const MovieInfo = () => {
     const [id, setId] = useState("");
     const store = useContext(Store);
-    const { states } = store;
+    const { select_id } = store;
 
-    setId(states[0].select_id);
+
+    useEffect( () => {
+        setId(select_id);
+    }, [select_id]);
 
     let movie = fetch("http://localhost:3000/api/movies/" + id)
         .then( res => res.json())

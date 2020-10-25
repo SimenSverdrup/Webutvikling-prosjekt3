@@ -1,25 +1,21 @@
 import React, {useContext, useEffect, useState} from 'react';
 import MovieBox from '../MovieBox/MovieBox';
-import {observer, Provider} from "mobx-react"
+import {observer } from "mobx-react"
 import Store from '../../mobx/store'
-import {get} from "mobx";
-import {useForceUpdate} from "mobx-react-lite/dist/utils/utils";
+
 
 
 const MovieList = () => {
     //const [numberOfMovies, setNumberOfMovies] = useState(5);
     const [movies, setMovies] = useState([]);
     const store = useContext(Store);
-    const { states, getState } = store;
+    const { search_string } = store;
 
 
     useEffect( () => {
-        console.log("Search string is now: " + states[0].search_string);
-        if (states[0].search_string) {
+        if (search_string) {
             // non-empty search string -> search for the specified title
-            console.log("non-empty search string: " + states[0].search_string);
-
-             fetch("http://localhost:3000/api/movies/title/" + states[0].search_string,
+             fetch("http://localhost:3000/api/movies/title/" + search_string,
                 {
                     method: 'GET'
                 })
@@ -33,8 +29,6 @@ const MovieList = () => {
         }
         else {
             // empty search string -> get all movies
-            console.log("empty search string");
-
              fetch("http://localhost:3000/api/movies/",
                 {
                     method: 'GET'
@@ -47,7 +41,8 @@ const MovieList = () => {
                     console.log('Could not get movies from DB');
                 });
         }
-    }, [states, getState]);
+    }, [search_string, movies]);
+
 
 
     return(
@@ -59,7 +54,8 @@ const MovieList = () => {
                               genres={movie["genres"]}
                               imgUrl={movie["posterurl"]}
                               year={movie["year"]}
-                              imdbRating={movie["imdbRating"]}/>
+                              imdbRating={movie["imdbRating"]}
+                    />
                 </ul>
             )}
         </div>

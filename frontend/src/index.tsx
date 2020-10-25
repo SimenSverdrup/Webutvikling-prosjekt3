@@ -3,14 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {Provider} from "mobx-react";
-import Store from './mobx/store';
 
 
 ReactDOM.render(
-    <Provider store={Store}>
-        <App />
-    </Provider>
+    <App/>
     , document.getElementById('root')
 )
 
