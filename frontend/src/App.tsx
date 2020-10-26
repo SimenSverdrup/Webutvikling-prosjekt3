@@ -14,7 +14,7 @@ class App extends Component {
                 <Title/>
                 <div id="grid_container">
                     <SearchBar/>
-                    <MenuListComposition/>
+                    {/*<MenuListComposition/>*/}
                     <MovieList/>
                     <MovieInfo/>
                 </div>
