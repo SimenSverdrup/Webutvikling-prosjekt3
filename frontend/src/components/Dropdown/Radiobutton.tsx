@@ -72,12 +72,6 @@ export default function CustomizedRadios() {
                 <FormControlLabel value="female" control={<StyledRadio />} label="Female" />
                 <FormControlLabel value="male" control={<StyledRadio />} label="Male" />
                 <FormControlLabel value="other" control={<StyledRadio />} label="Other" />
-                <FormControlLabel
-                    value="disabled"
-                    disabled
-                    control={<StyledRadio />}
-                    label="(Disabled option)"
-                />
             </RadioGroup>
         </FormControl>
     );

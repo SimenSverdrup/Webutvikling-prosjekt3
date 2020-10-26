@@ -4,7 +4,7 @@ import MovieInfo from './components/MovieInfo/MovieInfo';
 import SearchBar from './components/SearchBar/SearchBar';
 import Title from './components/Title/Title';
 import MovieList from "./components/MovieList/MovieList";
-import MenuListComposition from "./components/Dropdown/Dropdown";
+{/*import MenuListComposition from "./components/Dropdown/Dropdown";*/}
 
 
 class App extends Component {

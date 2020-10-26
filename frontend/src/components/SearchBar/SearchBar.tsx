@@ -2,7 +2,8 @@ import React, {useContext, useState }from 'react';
 import './SearchBar.css';
 import { observer } from "mobx-react-lite"
 import Store from '../../mobx/store';
-import MenuListComposition from "../../components/Dropdown/Dropdown";
+import MenuListComposition from "../../components/Dropdown/DropdownFilter";
+import MenuListComposition1 from "../../components/Dropdown/DropdownSort";
 
 
 
@@ -19,7 +20,7 @@ const SearchBar = () => {
                     updateSearch(element.currentTarget.value);
                     }}/>
                 <div id="searchBar_sort" onClick={() => {/* På klikk vil jeg åpne dropdown for sortering */}}>
-                    <MenuListComposition/>
+                    <MenuListComposition1/>
                     {/*<img src="" alt="Dropdown icon"/>*/}
                 </div>
                 <div id="searchBar_filter" onClick={() => {/* På klikk vil jeg åpne dropdown for filtrering */}}>

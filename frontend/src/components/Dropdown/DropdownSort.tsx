@@ -7,6 +7,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import CustomizedRadios from "./Radiobutton";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function MenuListComposition() {
+export default function MenuListComposition1() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef<HTMLButtonElement>(null);
@@ -63,7 +64,7 @@ export default function MenuListComposition() {
                     aria-haspopup="true"
                     onClick={handleToggle}
                 >
-                    Filter
+                    Sort
                 </Button>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
@@ -74,15 +75,10 @@ export default function MenuListComposition() {
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                        <MenuItem onClick={handleClose}>
-                                            Action
+                                         <MenuItem onClick={handleClose}>
+                                            IBMD Score
                                         </MenuItem>
-
-
-
-
-                                        <MenuItem onClick={handleClose}>Romance</MenuItem>
-                                        <MenuItem onClick={handleClose}>Drama</MenuItem>
+                                        <MenuItem onClick={handleClose}>Year</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
