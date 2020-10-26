@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import CustomizedRadios from "./Radiobutton";
+import DiscreteSlider from './Slider';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -64,7 +65,7 @@ export default function MenuListComposition1() {
                     aria-haspopup="true"
                     onClick={handleToggle}
                 >
-                    Sort
+                    Sort:
                 </Button>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
@@ -75,10 +76,16 @@ export default function MenuListComposition1() {
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                         <MenuItem onClick={handleClose}>
-                                            IBMD Score
-                                        </MenuItem>
-                                        <MenuItem onClick={handleClose}>Year</MenuItem>
+                                        {/*<DiscreteSlider/>*/}
+
+
+                                            <MenuItem onClick={handleClose}>Rating (high - low)</MenuItem>
+                                            <MenuItem onClick={handleClose}>Rating (low - high)</MenuItem>
+
+                                            <MenuItem onClick={handleClose}>Year (new - old)</MenuItem>
+                                            <MenuItem onClick={handleClose}>Year (old -  new)</MenuItem>
+
+
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
