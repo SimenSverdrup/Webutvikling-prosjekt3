@@ -2,10 +2,8 @@ import { observable, action, computed, reaction } from "mobx"
 import React from "react";
 import { createContext } from "react"
 
-export interface IStates {
-    search_string: string;
-    select_id: string;
-    filter_field: string;
+export interface IFilter {
+    filter_field: ["year", "imdbRating"];
     filter_equal_to: boolean,
     filter_greater_than: boolean,
     filter_less_than: boolean
@@ -17,7 +15,7 @@ class Store {
     }
 */
     // Observable state handlers
-    @observable select_id = "";
+    @observable select_id = "5f897e75987fae2bf4a18131";
 
     @observable search_string = "";
 
