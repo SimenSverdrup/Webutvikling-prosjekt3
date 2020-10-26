@@ -55,13 +55,6 @@ export default function MenuListComposition() {
 
     return (
         <div className={classes.root}>
-            <Paper className={classes.paper}>
-                <MenuList>
-                    <MenuItem>Profile</MenuItem>
-                    <MenuItem>My account</MenuItem>
-                    <MenuItem>Logout</MenuItem>
-                </MenuList>
-            </Paper>
             <div>
                 <Button
                     ref={anchorRef}
@@ -69,7 +62,7 @@ export default function MenuListComposition() {
                     aria-haspopup="true"
                     onClick={handleToggle}
                 >
-                    Toggle Menu Grow
+                    Filter
                 </Button>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
@@ -80,9 +73,17 @@ export default function MenuListComposition() {
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                        <MenuItem onClick={handleClose}>My account</MenuItem>
-                                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                                        <MenuItem onClick={handleClose}>
+                                            Action
+
+
+                                        </MenuItem>
+
+
+
+
+                                        <MenuItem onClick={handleClose}>Romance</MenuItem>
+                                        <MenuItem onClick={handleClose}>Drama</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
