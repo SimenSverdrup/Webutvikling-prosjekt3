@@ -44,9 +44,8 @@ const MovieList = () => {
     }, [search_string, movies]);
 
 
-
     return(
-        <div>
+        <div id="movieList">
             { movies.map( movie =>
                 <ul key={movie["_id"]}>
                     <MovieBox id={movie["_id"]} title={movie["title"]}

@@ -14,7 +14,7 @@ class App extends Component {
                 <div id="grid_container">
                     <SearchBar/>
                     <MovieList/>
-                    {/*<MovieInfo />*/}
+                    <MovieInfo/>
                 </div>
             </div>
             // Hvor mange movieBox'er skal jeg ha? Dette kommer jo an på søkeresultatet.
