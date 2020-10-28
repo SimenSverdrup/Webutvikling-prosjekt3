@@ -77,11 +77,23 @@ export default function MenuListComposition() {
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                                         {/*<CustomizedRadios/>   RADIOBUTTON */}
 
-                                        <MenuItem onClick={handleClose}>
-                                            Action
-                                        </MenuItem>
+                                        <MenuItem onClick={handleClose}>Action</MenuItem>
                                         <MenuItem onClick={handleClose}>Romance</MenuItem>
                                         <MenuItem onClick={handleClose}>Drama</MenuItem>
+                                        <MenuItem onClick={handleClose}>Horror</MenuItem>
+                                        <MenuItem onClick={handleClose}>Crime</MenuItem>
+                                        <MenuItem onClick={handleClose}>Comedy</MenuItem>
+                                        <MenuItem onClick={handleClose}>Fantasy</MenuItem>
+                                        <MenuItem onClick={handleClose}>Thriller</MenuItem>
+                                        <MenuItem onClick={handleClose}>Documentary</MenuItem>
+                                        <MenuItem onClick={handleClose}>Mystery</MenuItem>
+                                        <MenuItem onClick={handleClose}>Music</MenuItem>
+                                        <MenuItem onClick={handleClose}>Family</MenuItem>
+                                        <MenuItem onClick={handleClose}>Adventure</MenuItem>
+                                        <MenuItem onClick={handleClose}>War</MenuItem>
+                                        <MenuItem onClick={handleClose}>Sci-Fi</MenuItem>
+                                        <MenuItem onClick={handleClose}>Animation</MenuItem>
+                                        <MenuItem onClick={handleClose}>Biography</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>

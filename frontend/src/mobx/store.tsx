@@ -1,6 +1,6 @@
-import { observable, action, computed, reaction } from "mobx"
+import { observable, action, computed, reaction } from 'mobx';
 import React from "react";
-import { createContext } from "react"
+import { createContext } from "react";
 
 export interface IFilter {
     filter_field: ["year", "imdbRating"];
@@ -10,7 +10,7 @@ export interface IFilter {
 }
 
 class Store {
-    /*constructor() {
+    /*constructor() {npm install --save @types/mobx
         reaction(() => this.search_string, _ => console.log(this.search_string))
     }
 */

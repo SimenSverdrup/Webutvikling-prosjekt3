@@ -1,6 +1,5 @@
 import React, {useContext, useState }from 'react';
 import './SearchBar.css';
-import { observer } from "mobx-react-lite"
 import Store from '../../mobx/store';
 import MenuListComposition from "../../components/Dropdown/DropdownFilter";
 import MenuListComposition1 from "../../components/Dropdown/DropdownSort";

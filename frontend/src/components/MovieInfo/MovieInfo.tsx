@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import './MovieInfo.css';
-import { observer } from "mobx-react-lite"
+import { observer } from "mobx-react"
 import Store from '../../mobx/store'
 
 const initialMovie = {
@@ -33,9 +33,7 @@ const MovieInfo = () => {
             .catch( error => {
                 console.log('Could not get selected movie from DB');
             });
-
-
-    }, [select_id, id, movie]);
+    }, [movie, select_id]);
 
     duration = movie["duration"]
     duration = duration.slice(2);
