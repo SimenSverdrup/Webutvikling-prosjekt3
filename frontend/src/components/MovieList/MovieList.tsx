@@ -15,8 +15,9 @@ const MovieList = () => {
 
     useEffect( () => {
         if (genre !== "") {
+            let temp_search_string = search_string === "" ? "*" : search_string;
             console.log("update genre")
-            fetch("http://localhost:3000/api/movies/genre/" + search_string + '/' + genre,
+            fetch("http://localhost:3000/api/movies/genre/" + temp_search_string + '/' + genre,
                 {
                     method: 'GET'
                 })
