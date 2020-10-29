@@ -2,6 +2,9 @@ import React, {useContext, useEffect, useState} from 'react';
 import MovieBox from '../MovieBox/MovieBox';
 import { observer } from 'mobx-react';
 import Store from '../../mobx/store';
+import './MovieList.css';
+import '../MovieBox/MovieBox.css';
+
 
 
 
