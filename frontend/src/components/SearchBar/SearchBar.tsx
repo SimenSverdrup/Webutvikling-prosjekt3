@@ -1,9 +1,8 @@
 import React, {useContext, useState }from 'react';
 import './SearchBar.css';
 import Store from '../../mobx/store';
-import MenuListComposition from "../../components/Dropdown/DropdownFilter";
 import MenuListComposition1 from "../../components/Dropdown/DropdownSort";
-
+import LongMenu from "../../components/Dropdown/dropdownFilterSlider";
 
 
 const SearchBar = () => {
@@ -25,7 +24,7 @@ const SearchBar = () => {
                 <div id="searchBar_filter" onClick={() => {/* På klikk vil jeg åpne dropdown for filtrering */}}>
                     {/*<img src="" alt="Filter icon"/>*/}
                     {/*<img src="" alt="Dropdown icon"/>*/}
-                    <MenuListComposition/>
+                    <LongMenu/>
                 </div>
             </div>
         </div>
