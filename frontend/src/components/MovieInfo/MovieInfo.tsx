@@ -25,7 +25,7 @@ const MovieInfo = () => {
 
     useEffect( () => {
         setId(select_id);
-        fetch("http://localhost:3000/api/movies/" + id)
+        fetch("http://localhost:3000/api/movies/id/" + id)
             .then( res => res.json())
             .then( mov => {
                 setMovie(mov);

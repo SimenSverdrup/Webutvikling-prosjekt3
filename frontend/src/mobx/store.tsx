@@ -19,6 +19,8 @@ class Store {
 
     @observable search_string = "";
 
+    @observable genre = "";
+
     //@observable filter_field: "", filter_equal_to: false, filter_greater_than: false, filter_less_than: false
 
     // Actions:
@@ -30,6 +32,11 @@ class Store {
     @action updateSelect = (selection: string) => {
         this.select_id = selection;
         console.log("Selection updated to: " + this.select_id);
+    }
+
+    @action updateGenre = (genre: string) => {
+        this.genre = genre;
+        console.log("Genre filter updated to: " + this.genre);
     }
 }
 
