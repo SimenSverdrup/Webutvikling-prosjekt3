@@ -9,6 +9,7 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import CustomizedRadios from "./Radiobutton";
 
+const ITEM_HEIGHT = 48;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         paper: {
             marginRight: theme.spacing(2),
+            maxHeight: ITEM_HEIGHT*4.5,
         },
     }),
 );
@@ -72,7 +74,7 @@ export default function MenuListComposition() {
                             {...TransitionProps}
                             style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
                         >
-                            <Paper>
+                            <Paper className={classes.paper}>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                                         {/*<CustomizedRadios/>   RADIOBUTTON */}
