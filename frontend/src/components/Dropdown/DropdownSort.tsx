@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
@@ -7,8 +7,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import CustomizedRadios from "./Radiobutton";
-import DiscreteSlider from './Slider';
+import Store from "../../mobx/store";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -27,6 +26,9 @@ export default function MenuListComposition1() {
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef<HTMLButtonElement>(null);
 
+    const store = useContext(Store);
+    const { updateSort } = store;
+
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
     };
@@ -39,6 +41,11 @@ export default function MenuListComposition1() {
         setOpen(false);
     };
 
+    const handleSort = (event: React.MouseEvent<EventTarget>, sortType: string) => {
+        handleClose(event);
+        updateSort(sortType);
+    }
+
     function handleListKeyDown(event: React.KeyboardEvent) {
         if (event.key === 'Tab') {
             event.preventDefault();
@@ -49,10 +56,9 @@ export default function MenuListComposition1() {
     // return focus to the button when we transitioned from !open -> open
     const prevOpen = React.useRef(open);
     React.useEffect(() => {
-        if (prevOpen.current === true && open === false) {
+        if (prevOpen.current && !open) {
             anchorRef.current!.focus();
         }
-
         prevOpen.current = open;
     }, [open]);
 
@@ -76,16 +82,11 @@ export default function MenuListComposition1() {
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                        {/*<DiscreteSlider/>*/}
-
-
-                                            <MenuItem onClick={handleClose}>Rating (high - low)</MenuItem>
-                                            <MenuItem onClick={handleClose}>Rating (low - high)</MenuItem>
-
-                                            <MenuItem onClick={handleClose}>Year (new - old)</MenuItem>
-                                            <MenuItem onClick={handleClose}>Year (old -  new)</MenuItem>
-
-
+                                        <MenuItem onClick={(event) => handleSort(event, "*")}>None</MenuItem>
+                                        <MenuItem onClick={(event) => handleSort(event, "Rating-high-low")}>Rating (high - low)</MenuItem>
+                                            <MenuItem onClick={(event) => handleSort(event, "Rating-low-high")}>Rating (low - high)</MenuItem>
+                                            <MenuItem onClick={(event) => handleSort(event, "Year-new-old")}>Year (new - old)</MenuItem>
+                                            <MenuItem onClick={(event) => handleSort(event, "Year-old-new")}>Year (old -  new)</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
