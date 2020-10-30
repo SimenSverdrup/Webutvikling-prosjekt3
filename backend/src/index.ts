@@ -5,6 +5,8 @@ import { movieRouter } from './routes/movie'
 import bodyParser from "body-parser";
 
 const app = express()
+let cors = require('cors')
+app.use(cors());
 app.use(json())
 app.use(movieRouter)
 app.use(bodyParser.json())
