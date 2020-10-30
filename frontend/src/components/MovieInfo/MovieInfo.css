@@ -8,10 +8,25 @@
     border-radius: 5px;
 }
 
-#movieInfoTitle {
-    margin-left: 5%;
+#movieInfo img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: auto;
+    display: block;
+}
+
+#movieInfo p {
+    display: block;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 .movieInfoP {
     margin-left: 6%;
 }
+
+/*.flex-container {
+    display: grid;
+    grid-template-columns: 100%;
+  }*/

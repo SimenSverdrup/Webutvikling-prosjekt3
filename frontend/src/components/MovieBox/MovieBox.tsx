@@ -33,14 +33,16 @@ const MovieBox = (props: Props) => {
             /* På klikk vil jeg displaye movieInformation, altså sette select staten */
             updateSelect(props.id);
         }}>
-            <div id="movieBox_grid" onClick={() => updateSelect(props.id)}>
-                <img id={props.id} src={props.imgUrl} alt="Missing poster" width="200" height="300"/>
+            <div className="movieBox" id="movieBox_grid" onClick={() => updateSelect(props.id)}>
+                <img className="movieBox_cover" id={props.id} src={props.imgUrl} alt="Missing poster" width="200" height="300"/>
                 <h3>{props.title}</h3>
                 {/*<img id="movieBox_icon" src="../images/favourite.png" alt="Favourite icon"/>*/}
-                <p>Duration: {duration}</p>
-                <p>Genre: {props.genres.join(', ')}</p>
-                <p>Year: {props.year.toString()}</p>
-                <p>IMDB Rating: {imdbRating}</p>
+                <div className="infoLines">
+                    <p>Duration: {duration}</p>
+                    <p>Genre: {props.genres.join(', ')}</p>
+                    <p>Year: {props.year.toString()}</p>
+                    <p>IMDB Rating: {imdbRating}</p>
+                </div>
             </div>
         </div>
     )
