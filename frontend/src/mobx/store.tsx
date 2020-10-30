@@ -19,7 +19,9 @@ class Store {
 
     @observable search_string = "";
 
-    @observable genre = "";
+    @observable genre = "*";
+
+    @observable sort = "*";
 
     //@observable filter_field: "", filter_equal_to: false, filter_greater_than: false, filter_less_than: false
 
@@ -37,6 +39,11 @@ class Store {
     @action updateGenre = (genre: string) => {
         this.genre = genre;
         console.log("Genre filter updated to: " + this.genre);
+    }
+
+    @action updateSort = (sort: string) => {
+        this.sort = sort;
+        console.log("Sort updated to: " + this.sort);
     }
 }
 

@@ -13,14 +13,14 @@ const MovieList = () => {
     const [movies, setMovies] = useState([]);
     const [genreChoice, setGenre] = useState("");
     const store = useContext(Store);
-    const { search_string, genre } = store;
+    const { search_string, genre, sort } = store;
 
 
     useEffect( () => {
-        if (genre !== "") {
+        if (genre !== "*") {
             let temp_search_string = search_string === "" ? "*" : search_string;
             console.log("update genre")
-            fetch("http://localhost:3000/api/movies/genre/" + temp_search_string + '/' + genre,
+            fetch("http://localhost:3000/api/movies/genre/" + temp_search_string + '/' + genre + '/' + sort,
                 {
                     method: 'GET'
                 })
@@ -36,7 +36,7 @@ const MovieList = () => {
         else {
             if (search_string) {
                 // non-empty search string -> search for the specified title
-                fetch("http://localhost:3000/api/movies/title/" + search_string,
+                fetch("http://localhost:3000/api/movies/title/" + search_string + '/' + sort,
                     {
                         method: 'GET'
                     })
@@ -50,7 +50,7 @@ const MovieList = () => {
             }
             else {
                 // empty search string -> get all movies
-                fetch("http://localhost:3000/api/movies/",
+                fetch("http://localhost:3000/api/movies/" + sort,
                     {
                         method: 'GET'
                     })
@@ -63,7 +63,7 @@ const MovieList = () => {
                     });
             }
         }
-    }, [search_string, movies, genre, genreChoice]);
+    }, [search_string, movies, genre, sort]);
 
 
     return(
