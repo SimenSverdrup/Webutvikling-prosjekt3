@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchBar correctly 1`] = `
+<div>
+  <div
+    id="searchBar_grid_container"
+  >
+    <div
+      class="searchBar_grid"
+    >
+      <input
+        placeholder="Search"
+        type="text"
+      />
+      <div
+        id="searchBar_sort"
+      >
+        <div
+          class="makeStyles-root-1"
+        >
+          <div>
+            <button
+              aria-haspopup="true"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Sort:
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="searchBar_filter"
+      >
+        <div>
+          <button
+            aria-haspopup="true"
+            class="MuiButtonBase-root MuiButton-root MuiButton-text"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Filter:
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
