@@ -1,5 +1,5 @@
 describe('Front page loads', function() {
-    it('Loads successful', function() {
-        cy.visit('http://localhost:3000')
+    it('Loads successfully', function() {
+        cy.visit('http://localhost:3000');
     })
-})
+});
