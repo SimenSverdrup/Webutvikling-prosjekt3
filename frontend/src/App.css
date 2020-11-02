@@ -7,7 +7,6 @@ p {
   font-size: 15px;
   font-style: normal;
   font-weight: 200;
-  /*line-height: 200%;*/
 }
 
 h2 {
@@ -25,8 +24,8 @@ h3 {
 
 #grid_container {
   display: grid;
-  grid-template-columns: 14.8% 14.2% 14.2% 14.2% 14.2% 14.2% 14.2%;
-  grid-template-rows: 5% 18% 18% 18% 18% 18% 5%;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 5% 10% 10% 10% 10% 10% 10% 10% 10% 10% 5%;
   width: 80%;
   margin-left: 10%;
 }

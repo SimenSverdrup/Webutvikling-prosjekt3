@@ -50,7 +50,13 @@ const MovieInfo = () => {
             <p className="movieInfo">Genres: {movie["genres"].join(', ')}</p>
             <p className="movieInfo">Main actors: {movie["actors"].join(', ')}</p>
             <p className="movieInfo">Storyline: {movie["storyline"]}</p>
-            <p className="movieInfo">IMDB rating: {movie["imdbRating"]? movie["imdbRating"] + "/10" : "Unknown" }</p>
+            <p id="rateInfo">Rate this movie:</p>
+            <input placeholder="1-10"></input>
+            <p id="userRating">User-rating: None yet</p>
+            {/** Bruker getElementById(userRating).innerText("...") eller
+             * getElementById(userRating).innerHtml("...") i js for å endre hva som står her.
+             * Eller nei, kom på at man kanskje bruker props, hehehe */}
+             <p className="movieInfo">IMDB rating: {movie["imdbRating"]? movie["imdbRating"] + "/10" : "Unknown" }</p>
         </div>
     )
 }

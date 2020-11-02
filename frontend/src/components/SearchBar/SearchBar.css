@@ -1,6 +1,6 @@
 #searchBar_grid_container {
     grid-column-start: 1;
-    grid-column-end: 8;
+    grid-column-end: 11;
     grid-row-start: 1;
     grid-row-end: 2;
 }

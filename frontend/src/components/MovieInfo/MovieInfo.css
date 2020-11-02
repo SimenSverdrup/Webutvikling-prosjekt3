@@ -1,29 +1,42 @@
 #movieInfo {
-    grid-column-start: 6;
-    grid-column-end: 8;
+    grid-column-start: 7;
+    grid-column-end: 11;
     grid-row-start: 2;
-    grid-row-end: 5;
+    grid-row-end: 8;
     background-color: #EEEEEE;
     margin-top: 20px;
     border-radius: 5px;
 }
 
 #movieInfo img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-    height: auto;
+    margin: 20px auto auto auto;
     display: block;
 }
 
 #movieInfo p {
-    display: block;
     margin-left: 7%;
     margin-right: 7%;
+    margin-top: 0;
+    grid-column-start: 2;
+}
+
+#movieInfo > input {
+    grid-column-start: 2;
 }
 
 .movieInfoP {
     margin-left: 6%;
+}
+
+#rateInfo {
+    display: inline;
+}
+
+#movieInfo > input {
+    display: inline;
+    padding: 5px;
+    width: 28px;
+    margin-top: 0;
 }
 
 @media only screen and (max-width: 710px) {
@@ -36,10 +49,14 @@
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 1;
-        grid-row-end: 8;
+        grid-row-end: 11;
         margin: 10px auto 10px 10px;
         width: 90%;
         height: auto;
+    }
+
+    #movieInfo > input {
+        margin: 0 auto 15px 25px;
     }
 
     hr {

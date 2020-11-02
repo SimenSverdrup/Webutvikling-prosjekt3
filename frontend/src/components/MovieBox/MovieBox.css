@@ -1,6 +1,4 @@
 .movieBox {
-    grid-column-start: 1;
-    grid-column-end: 5;
     background-color: #EEEEEE;
     margin-top: 20px;
     border-radius: 5px;
