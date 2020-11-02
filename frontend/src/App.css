@@ -20,11 +20,19 @@ h3 {
   font-weight: normal;
   line-height: 150%;
   color: rgba(0, 0, 0, 0.8);
+  margin-left: 7%;
 }
 
 #grid_container {
   display: grid;
   grid-template-columns: 14.8% 14.2% 14.2% 14.2% 14.2% 14.2% 14.2%;
+  grid-template-rows: 5% 18% 18% 18% 18% 18% 5%;
   width: 80%;
   margin-left: 10%;
+}
+
+@media only screen and (max-width: 710px) {
+  #grid_container {
+    display: block;
+  }
 }

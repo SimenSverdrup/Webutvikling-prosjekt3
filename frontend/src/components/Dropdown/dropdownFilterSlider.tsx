@@ -3,6 +3,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from "@material-ui/core/Button";
 import Store from '../../mobx/store';
+import './Dropdown.css';
 
 
 const options = [
@@ -54,7 +55,7 @@ export default function LongMenu() {
     }
 
     return (
-        <div>
+        <div className="dropdown">
             <Button
                 ref={anchorRef}
     aria-controls={open ? 'menu-list-grow' : undefined}
