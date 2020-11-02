@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Store from "../../mobx/store";
+import './Dropdown.css';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -63,7 +64,7 @@ export default function MenuListComposition1() {
     }, [open]);
 
     return (
-        <div className={classes.root}>
+        <div className="{classes.root} dropdown" >
             <div>
                 <Button
                     ref={anchorRef}

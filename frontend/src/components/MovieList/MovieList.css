@@ -1,6 +1,8 @@
 #movieList {
     grid-column-start: 1;
     grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 7;
 }
 
 #movieList ul {
