@@ -12,16 +12,34 @@ const initialMovie = {
     actors: ["", ""],
     storyline: "",
     imdbRating: "",
+    userRating: "",
     posterurl: ""
 }
+
+
 
 const MovieInfo = () => {
     const store = useContext(Store);
     const { select_id } = store;
     const [id, setId] = useState(select_id);
     const [movie, setMovie] = useState(initialMovie);
+    const [userRating, setUserRating] = useState("");
 
     let duration = "Unknown";
+
+    const updateUserRating = () => {
+        if (!Number.isInteger(parseInt(userRating))) {
+            // not a number
+            console.log("Not a number");
+            return;
+        }
+        fetch("http://localhost:3000/api/user/" + id + '/' + userRating.toString(), {
+            method: 'PUT'
+        })
+            .catch( error => {
+                console.log('Could not update selected movie in DB');
+            });
+    }
 
     useEffect( () => {
         setId(select_id);
@@ -51,8 +69,9 @@ const MovieInfo = () => {
             <p className="movieInfo">Main actors: {movie["actors"].join(', ')}</p>
             <p className="movieInfo">Storyline: {movie["storyline"]}</p>
             <p id="rateInfo">Rate this movie:</p>
-            <input placeholder="1-10"></input>
-            <p id="userRating">User-rating: None yet</p>
+            <input placeholder="1-10" onChange={event => setUserRating(event.target.value)}></input>
+            <input id="submitButton" type="submit" value="Submit" onClick={event => updateUserRating()}/>
+            <p id="userRating">Your rating: {movie["userRating"] ? movie["userRating"] : "None yet"}</p>
             {/** Bruker getElementById(userRating).innerText("...") eller
              * getElementById(userRating).innerHtml("...") i js for å endre hva som står her.
              * Eller nei, kom på at man kanskje bruker props, hehehe */}

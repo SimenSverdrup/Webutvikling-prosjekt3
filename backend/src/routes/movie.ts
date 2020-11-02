@@ -477,16 +477,15 @@ router.get('/api/movies/convert', [], async (req: Request, res: Response) => {
 });
 
 
-// PUT request to add user review to movie in the DB
-router.put('/api/movies/:id', async (req: Request, res: Response) => {
+// PUT request to add user rating to movie in the DB
+router.put('/api/user/:id/:rating', async (req: Request, res: Response) => {
     console.log("PUT request");
     try {
-        await Movie.findByIdAndUpdate(req.params.id, req.body).then(
-            () => {
-                Movie.findOne({_id: req.params.id})
-                    .then(
-                        movie => res.send(movie)
-                    )
+        await Movie.updateOne(
+            {_id: req.params.id},
+            {userRating: parseInt(req.params.rating)},
+            {multi:true},
+            function(err, numberAffected){
             });
     }
     catch(error) {

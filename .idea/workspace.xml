@@ -23,19 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6bafdde-5dd0-40da-97bb-60544e42c3db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Paginater/Paginater.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Paginater/Paginater.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/Movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/Movie.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/routes/movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/movie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieList/MovieList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieList/MovieList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +100,7 @@
       <workItem from="1602763999742" duration="22885000" />
       <workItem from="1602855232110" duration="2090000" />
       <workItem from="1603202077301" duration="9025000" />
+      <workItem from="1604355505238" duration="4719000" />
     </task>
     <servers />
   </component>

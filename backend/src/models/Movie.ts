@@ -8,6 +8,7 @@ interface IMovie {
     storyline: string;
     posterurl: string;
     imdbRating: number;
+    userRating: number;
     actors: string[];
     rating: number;
 }
@@ -23,6 +24,7 @@ interface movieDoc extends mongoose.Document {
     storyline: string;
     posterurl: string;
     imdbRating: number;
+    userRating: number;
     actors: string[];
     rating: number;
 }
@@ -46,6 +48,9 @@ const movieSchema = new mongoose.Schema(
             type: String
         },
         imdbRating: {
+            type: Number
+        },
+        userRating: {
             type: Number
         },
         actors: {
