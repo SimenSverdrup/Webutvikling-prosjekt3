@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Store from "../../mobx/store";
+import './Dropdown.css';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -63,7 +64,7 @@ export default function MenuListComposition1() {
     }, [open]);
 
     return (
-        <div className={classes.root}>
+        <div className="{classes.root} dropdown" >
             <div>
                 <Button
                     ref={anchorRef}
@@ -83,10 +84,10 @@ export default function MenuListComposition1() {
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                                         <MenuItem onClick={(event) => handleSort(event, "*")}>None</MenuItem>
+                                        <MenuItem onClick={(event) => handleSort(event, "Rating-low-high")}>Rating (low - high)</MenuItem>
+                                        <MenuItem onClick={(event) => handleSort(event, "Rating-high-low")}>Rating (high - low)</MenuItem>
                                         <MenuItem onClick={(event) => handleSort(event, "Year-new-old")}>Year (new - old)</MenuItem>
                                         <MenuItem onClick={(event) => handleSort(event, "Year-old-new")}>Year (old -  new)</MenuItem>
-                                        <MenuItem onClick={(event) => handleSort(event, "Rating-high-low")}>Rating (high - low)</MenuItem>
-                                        <MenuItem onClick={(event) => handleSort(event, "Rating-low-high")}>Rating (low - high)</MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>

@@ -17,7 +17,6 @@ mongoose.connect('mongodb://it2810:it2810@it2810-19.idi.ntnu.no:27017/movies', {
     useCreateIndex: true,
     useUnifiedTopology: true
 }, (error) => {
-    console.log("error: " + error)
 })
 
 const connection = mongoose.connection

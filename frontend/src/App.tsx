@@ -16,6 +16,7 @@ class App extends Component {
                     <MovieList/>
                     <MovieInfo/>
                 </div>
+                <Paginater/>
             </div>
         );
     }

@@ -79,7 +79,6 @@ const MovieList = () => {
                     />
                 </ul>
             )}
-            <Paginater/>
         </div>
     )
 }
