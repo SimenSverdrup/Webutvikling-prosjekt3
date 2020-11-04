@@ -19,11 +19,8 @@ const SearchBar = () => {
                     }}/>
                 <div id="searchBar_sort" onClick={() => {/* På klikk vil jeg åpne dropdown for sortering */}}>
                     <MenuListComposition1/>
-                    {/*<img src="" alt="Dropdown icon"/>*/}
                 </div>
                 <div id="searchBar_filter" onClick={() => {/* På klikk vil jeg åpne dropdown for filtrering */}}>
-                    {/*<img src="" alt="Filter icon"/>*/}
-                    {/*<img src="" alt="Dropdown icon"/>*/}
                     <LongMenu/>
                 </div>
             </div>

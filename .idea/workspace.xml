@@ -25,8 +25,10 @@
     <list default="true" id="c6bafdde-5dd0-40da-97bb-60544e42c3db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/cypress/integration/SearchBar.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/cypress/integration/SearchBar.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/tests/__snapshots__/Searchbar.test.tsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/tests/__snapshots__/Searchbar.test.tsx.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/tests/setupTests.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieBox/MovieBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieBox/MovieBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
