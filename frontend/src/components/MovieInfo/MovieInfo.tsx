@@ -67,9 +67,9 @@ const MovieInfo = () => {
             <p className="movieInfo">Duration: {duration}</p>
             <p className="movieInfo">Genres: {movie["genres"].join(', ')}</p>
             <p className="movieInfo">Main actors: {movie["actors"].join(', ')}</p>
-            <p className="movieInfo">Storyline: {movie["storyline"]}</p>
+            <p className="movieInfo">Storyline: {movie["storyline"].length > 341 ? movie["storyline"].substring(0, 340) : movie["storyline"] }</p>
             <p id="rateInfo">Rate this movie:</p>
-            <input placeholder="1-10" onChange={event => setUserRating(event.target.value)}></input>
+            <input placeholder="1-10" onChange={event => setUserRating(event.target.value)}/>
             <input id="submitButton" type="submit" value="Submit" onClick={event => updateUserRating()}/>
             <p id="userRating">Your rating: {movie["userRating"] ? movie["userRating"] : "None yet"}</p>
             {/** Bruker getElementById(userRating).innerText("...") eller
