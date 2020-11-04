@@ -24,11 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c6bafdde-5dd0-40da-97bb-60544e42c3db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/cypress/integration/SearchBar.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/cypress/integration/SearchBar.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieBox/MovieBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieBox/MovieBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +96,7 @@
       <workItem from="1602763999742" duration="22885000" />
       <workItem from="1602855232110" duration="2090000" />
       <workItem from="1603202077301" duration="9025000" />
-      <workItem from="1604355505238" duration="4719000" />
+      <workItem from="1604523265075" duration="116000" />
     </task>
     <servers />
   </component>
