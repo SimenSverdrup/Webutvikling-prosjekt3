@@ -1,13 +1,10 @@
-describe('Type movie title', function() {
-    it('Shows correct movie', function() {
+describe('Type in SearchBar', function() {
+    it('Accepts input', function() {
         cy.visit('http://localhost:3001');
 
-        cy.get('Input[name="Name"]')
+        cy.get('searchInput')
             .type('Game Night')
             .should('have.value', 'Game Night');
-
-
-        cy.get('Button[id="applyButton"]').click()
 
     })
 });

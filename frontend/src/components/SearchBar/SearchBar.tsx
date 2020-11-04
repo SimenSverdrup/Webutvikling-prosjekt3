@@ -12,7 +12,7 @@ const SearchBar = () => {
     return (
         <div id="searchBar_grid_container">
             <div className="searchBar_grid">
-                <input type="text" placeholder="Search" onInput={(element) => {
+                <input className='searchInput' type="text" placeholder="Search" onInput={(element) => {
                     //use action here, to set search string state in the store
                     // this will trigger a re-render of MovieList automatically
                     updateSearch(element.currentTarget.value);
