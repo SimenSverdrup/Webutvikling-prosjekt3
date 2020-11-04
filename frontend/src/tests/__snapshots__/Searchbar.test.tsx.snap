@@ -9,6 +9,7 @@ exports[`renders SearchBar correctly 1`] = `
       class="searchBar_grid"
     >
       <input
+        class="searchInput"
         placeholder="Search"
         type="text"
       />
