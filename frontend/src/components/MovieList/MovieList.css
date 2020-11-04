@@ -1,0 +1,8 @@
+#movieList {
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+#movieList ul {
+    padding-left: 0;
+}

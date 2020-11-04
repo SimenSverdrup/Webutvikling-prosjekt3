@@ -1,0 +1,35 @@
+#searchBar_grid_container {
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.searchBar_grid {
+    background-color: #C0C0C0;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    border-radius: 5px;
+}
+
+input {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin: 7px;
+    padding: 10px;
+    border-radius: 4px;
+    border-width: 1px;
+}
+
+#searchBar_sort {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: 45%;
+}
+
+#searchBar_filter {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin-left: 30%;
+}
+
