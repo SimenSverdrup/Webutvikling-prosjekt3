@@ -10,10 +10,6 @@ export interface IFilter {
 }
 
 class Store {
-    /*constructor() {npm install --save @types/mobx
-        reaction(() => this.search_string, _ => console.log(this.search_string))
-    }
-*/
     // Observable state handlers
     @observable select_id = "5f897e75987fae2bf4a18131";
 
@@ -25,7 +21,6 @@ class Store {
 
     @observable page = 0;
 
-    //@observable filter_field: "", filter_equal_to: false, filter_greater_than: false, filter_less_than: false
 
     // Actions:
     @action updateSearch = (search: string) => {

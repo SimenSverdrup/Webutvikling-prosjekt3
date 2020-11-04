@@ -24,11 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c6bafdde-5dd0-40da-97bb-60544e42c3db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/Movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/Movie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/movie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/cypress/integration/SearchBar.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/cypress/integration/SearchBar.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieBox/MovieBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieBox/MovieBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/mobx/store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +76,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\simen\Documents\A_Studier\Webutvikling\prosjekt-3\frontend\src" />
       <recent name="C:\Users\simen\Documents\A_Studier\Webutvikling\prosjekt-3\frontend\src\tests\__snapshots__" />
       <recent name="C:\Users\simen\Documents\A_Studier\Webutvikling\prosjekt-3\frontend\src\tests" />
-      <recent name="C:\Users\simen\Documents\A_Studier\Webutvikling\prosjekt-3\frontend\src" />
       <recent name="C:\Users\simen\Documents\A_Studier\Webutvikling\prosjekt-3\backend\src" />
       <recent name="C:\Users\simen\Documents\A_Studier\Webutvikling\prosjekt-3\frontend" />
     </key>

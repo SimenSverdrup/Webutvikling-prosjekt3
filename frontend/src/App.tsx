@@ -4,8 +4,6 @@ import MovieInfo from './components/MovieInfo/MovieInfo';
 import SearchBar from './components/SearchBar/SearchBar';
 import Title from './components/Title/Title';
 import MovieList from "./components/MovieList/MovieList";
-import Paginater from './components/Paginater/Paginater';
-{/*import MenuListComposition from "./components/Dropdown/Dropdown";*/}
 
 
 class App extends Component {
@@ -15,9 +13,8 @@ class App extends Component {
                 <Title/>
                 <div id="grid_container">
                     <SearchBar/>
-                    <MovieInfo/>
-                    {/*<MenuListComposition/>*/}
                     <MovieList/>
+                    <MovieInfo/>
                 </div>
                 <Paginater/>
             </div>
