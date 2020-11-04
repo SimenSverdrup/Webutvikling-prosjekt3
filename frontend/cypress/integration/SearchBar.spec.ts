@@ -1,6 +1,6 @@
 describe('Type in SearchBar', function() {
     it('Accepts input', function() {
-        cy.visit('http://localhost:3001');
+        cy.visit('/');
 
         cy.get('searchInput')
             .type('Game Night')
