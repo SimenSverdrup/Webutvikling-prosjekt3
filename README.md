@@ -1,5 +1,5 @@
 ### Hvordan kjøre prosjektet
-
+0. Last ned prosjektet lokalt, enten ved hjelp av Git eller manuelt i .zip format.
 1. Bruk NTNU VPN dersom du ikke er på eduroam/NTNU gjest nettverk
 2. Naviger inn i backend-mappen og kjør `npm install` og deretter `npm start`
 3. Verifiser at backend nå kjører på port 3000 og at du får opp "Connected to DB" i terminalen
@@ -39,3 +39,4 @@ For prosjektet skulle gruppen implementere automatisert end-to-end testing og mi
 
 Ettersom end-to-end testing ikke er opptatt av spesifikke React-komponenter, så trenger vi systematisk enhetstesting. Vi tar utgangspunkt i Jest, et javascript rammeverk som følger med create-react-app. For å dekke minimum en form med enhetstesting har vi tatt utgangspunkt i snapshot testing som passer fint å bruke til vårt prosjekt. Snapshot var passelig for å teste searchbar-en og de tilhørende sort- og filter-knappene, dette ble gjort ved å sjekke om komponentene og UI ble rendret på en korrekt og ønskelig måte. De ulike enhetstestene kan finnes i mappen frontend/src/tests, og startes ved å kjøre “npm test” i terminalen.
 
+I tillegg har Postman og MongoDB Compass blitt brukt til å teste REST APIet kontinuerlig gjennom utviklingen.
