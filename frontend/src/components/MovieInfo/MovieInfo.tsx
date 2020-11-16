@@ -33,7 +33,7 @@ const MovieInfo = () => {
             console.log("Not a number");
             return;
         }
-        fetch("http://it2810-19.idi.ntnu.no:3000/api/user/" + id + '/' + userRating.toString(), {
+        fetch("http://localhost:3000/api/user/" + id + '/' + userRating.toString(), {
             method: 'PUT'
         })
             .catch( error => {
@@ -43,7 +43,7 @@ const MovieInfo = () => {
 
     useEffect( () => {
         setId(select_id);
-        fetch("http://it2810-19.idi.ntnu.no:3000/api/id/" + id)
+        fetch("http://localhost:3000/api/id/" + id)
             .then( res => res.json())
             .then( mov => {
                 setMovie(mov);
