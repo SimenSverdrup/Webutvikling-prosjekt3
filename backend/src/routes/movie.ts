@@ -5,7 +5,7 @@ import { Movie } from '../models/Movie'
 const router = express.Router();
 
 // GET request for all movies
-router.get('/api/movies/:sort/:page', [], async (req: Request, res: Response) => {
+router.get('/api/movies/:sort/:page/:limit', [], async (req: Request, res: Response) => {
     console.log("GET request all");
     console.log(req.params.sort);
     console.log("page: " + req.params.page);
@@ -15,8 +15,8 @@ router.get('/api/movies/:sort/:page', [], async (req: Request, res: Response) =>
         console.log("no sort");
         try {
             Movie.find({})
-                .limit(5)
-                .skip(5 * parseInt(req.params.page))
+                .limit(parseInt(req.params.limit))
+                .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                 .then((movies) => {
                     res.send(movies)
                 });
@@ -32,8 +32,8 @@ router.get('/api/movies/:sort/:page', [], async (req: Request, res: Response) =>
                 try {
                     Movie.find({})
                         .sort({imdbRating: 'descending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then((movies) => {
                             res.send(movies)
                         });
@@ -46,8 +46,8 @@ router.get('/api/movies/:sort/:page', [], async (req: Request, res: Response) =>
                 try {
                     Movie.find({})
                         .sort({imdbRating: 'ascending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then((movies) => {
                             res.send(movies)
                         });
@@ -60,8 +60,8 @@ router.get('/api/movies/:sort/:page', [], async (req: Request, res: Response) =>
                 try {
                     Movie.find({})
                         .sort({year: 'descending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then((movies) => {
                             res.send(movies)
                         });
@@ -74,8 +74,8 @@ router.get('/api/movies/:sort/:page', [], async (req: Request, res: Response) =>
                 try {
                     Movie.find({})
                         .sort({year: 'ascending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then((movies) => {
                             res.send(movies)
                         });
@@ -107,7 +107,7 @@ router.get('/api/id/:id', [], async (req: Request, res: Response) => {
 });
 
 // GET request for getting a specific movie by title
-router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res: Response) => {
+router.get('/api/movies/title/:title/:sort/:page/:limit', [], async (req: Request, res: Response) => {
     console.log("GET request by title");
     console.log(req.params.title);
     console.log(req.params.sort);
@@ -120,8 +120,8 @@ router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res:
                     "title": {"$regex": req.params.title, "$options": "in"}
                 }
             )
-                .limit(5)
-                .skip(5 * parseInt(req.params.page))
+                .limit(parseInt(req.params.limit))
+                .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                 .then(
                     movies => res.send(movies)
                 )
@@ -139,8 +139,8 @@ router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res:
                         "title": {"$regex": req.params.title, "$options": "in"}
                     })
                         .sort({imdbRating: 'descending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then(
                             movies => res.send(movies)
                         )
@@ -155,8 +155,8 @@ router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res:
                         "title": {"$regex": req.params.title, "$options": "in"}
                     })
                         .sort({imdbRating: 'ascending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then((movies) => {
                             res.send(movies)
                         });
@@ -171,8 +171,8 @@ router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res:
                         "title": {"$regex": req.params.title, "$options": "in"}
                     })
                         .sort({year: 'descending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then((movies) => {
                             res.send(movies)
                         });
@@ -187,8 +187,8 @@ router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res:
                         "title": {"$regex": req.params.title, "$options": "in"}
                     })
                         .sort({year: 'ascending'})
-                        .limit(5)
-                        .skip(5 * parseInt(req.params.page))
+                        .limit(parseInt(req.params.limit))
+                        .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                         .then((movies) => {
                             res.send(movies)
                         });
@@ -204,7 +204,7 @@ router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res:
 });
 
 // GET request for getting a specific movie by genre + title
-router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Request, res: Response) => {
+router.get('/api/movies/genre/:title/:genre/:sort/:page/:limit', [], async (req: Request, res: Response) => {
     console.log("GET request by title and genre");
     console.log(req.params.title);
     console.log(req.params.genre);
@@ -218,8 +218,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                 await Movie.find({
                     "genres": req.params.genre
                 })
-                    .limit(5)
-                    .skip(5 * parseInt(req.params.page))
+                    .limit(parseInt(req.params.limit))
+                    .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                     .then(
                         movies => res.send(movies)
                     )
@@ -235,8 +235,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                     $and: [{"title": {$regex: req.params.title, $options: "i"}},
                         {"genres": req.params.genre}]
                 })
-                    .limit(5)
-                    .skip(5 * parseInt(req.params.page))
+                    .limit(parseInt(req.params.limit))
+                    .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                     .then(
                         movies => res.send(movies)
                     )
@@ -256,8 +256,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                             "genres": req.params.genre
                         })
                             .sort({imdbRating: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
@@ -274,8 +274,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                                 {"genres": req.params.genre}]
                         })
                             .sort({imdbRating: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
@@ -292,8 +292,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                             "genres": req.params.genre
                         })
                             .sort({imdbRating: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
@@ -310,8 +310,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                                 {"genres": req.params.genre}]
                         })
                             .sort({imdbRating: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
@@ -328,8 +328,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                             "genres": req.params.genre
                         })
                             .sort({year: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
@@ -346,8 +346,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                                 {"genres": req.params.genre}]
                         })
                             .sort({year: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
@@ -364,8 +364,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                             "genres": req.params.genre
                         })
                             .sort({year: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
@@ -382,8 +382,8 @@ router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Reques
                                 {"genres": req.params.genre}]
                         })
                             .sort({year: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
+                            .limit(parseInt(req.params.limit))
+                            .skip(parseInt(req.params.limit) * parseInt(req.params.page))
                             .then(
                                 movies => res.send(movies)
                             )
