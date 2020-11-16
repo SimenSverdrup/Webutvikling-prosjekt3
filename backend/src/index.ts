@@ -12,7 +12,7 @@ app.use(movieRouter)
 app.use(bodyParser.json())
 // We use bodyParser to study POST requests in Postman
 
-mongoose.connect('mongodb://it2810:it2810@it2810-19.idi.ntnu.no:27017/movies', {
+mongoose.connect('mongodb://localhost/movies', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
