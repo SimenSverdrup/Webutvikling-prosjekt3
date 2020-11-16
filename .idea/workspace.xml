@@ -24,7 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c6bafdde-5dd0-40da-97bb-60544e42c3db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/movie.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieInfo/MovieInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MovieList/MovieList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MovieList/MovieList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +98,11 @@
       <workItem from="1602763999742" duration="22885000" />
       <workItem from="1602855232110" duration="2090000" />
       <workItem from="1603202077301" duration="9025000" />
-      <workItem from="1604523265075" duration="116000" />
+      <workItem from="1604523265075" duration="528000" />
+      <workItem from="1605180220771" duration="1648000" />
+      <workItem from="1605190637276" duration="4460000" />
+      <workItem from="1605263210570" duration="6154000" />
+      <workItem from="1605520744202" duration="1822000" />
     </task>
     <servers />
   </component>
@@ -119,6 +125,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1605183836024">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1605183836024" />
     <state x="2366" y="231" key="run.anything.popup" timestamp="1604071066422">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

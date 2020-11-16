@@ -203,201 +203,38 @@ router.get('/api/movies/title/:title/:sort/:page', [], async (req: Request, res:
     }
 });
 
-// GET request for getting a specific movie by genre + title
-router.get('/api/movies/genre/:title/:genre/:sort/:page', [], async (req: Request, res: Response) => {
-    console.log("GET request by title and genre");
-    console.log(req.params.title);
-    console.log(req.params.genre);
-    console.log(req.params.sort);
+// GET request for getting number of movies by genre + title
+router.get('/api/movies/amount/:title/:genre', [], async (req: Request, res: Response) => {
+    console.log("GET request by title and genre, finding amount of movies");
 
-    if (req.params.sort === '*') {
-        // no sort
-        console.log("no sort");
-        if (req.params.title === '*') {
-            try {
-                await Movie.find({
-                    "genres": req.params.genre
-                })
-                    .limit(5)
-                    .skip(5 * parseInt(req.params.page))
-                    .then(
-                        movies => res.send(movies)
-                    )
-            }
-            catch(error) {
-                res.status(404).json({message: 'not found'})
-                console.log('No movie with genre: ' + req.params.genre.toString());
-            }
+    if (req.params.title === '*') {
+        try {
+            await Movie.find({
+                "genres": req.params.genre
+            })
+                .then(
+                    movies => res.send(movies)
+                )
         }
-        else {
-            try {
-                await Movie.find({
-                    $and: [{"title": {$regex: req.params.title, $options: "i"}},
-                        {"genres": req.params.genre}]
-                })
-                    .limit(5)
-                    .skip(5 * parseInt(req.params.page))
-                    .then(
-                        movies => res.send(movies)
-                    )
-            } catch (error) {
-                res.status(404).json({message: 'not found'})
-                console.log('No movie with genre: ' + req.params.genre.toString());
-            }
+        catch(error) {
+            res.status(404).json({message: 'not found'})
+            console.log('No movie with genre: ' + req.params.genre.toString());
         }
     }
     else {
-        console.log("will sort");
-        switch (req.params.sort) {
-            case "Rating-high-low":
-                if (req.params.title === '*') {
-                    try {
-                        await Movie.find({
-                            "genres": req.params.genre
-                        })
-                            .sort({imdbRating: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    }
-                    catch(error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                else {
-                    try {
-                        await Movie.find({
-                            $and: [{"title": {$regex: req.params.title, $options: "i"}},
-                                {"genres": req.params.genre}]
-                        })
-                            .sort({imdbRating: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    } catch (error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                break;
-            case "Rating-low-high":
-                if (req.params.title === '*') {
-                    try {
-                        await Movie.find({
-                            "genres": req.params.genre
-                        })
-                            .sort({imdbRating: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    }
-                    catch(error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                else {
-                    try {
-                        await Movie.find({
-                            $and: [{"title": {$regex: req.params.title, $options: "i"}},
-                                {"genres": req.params.genre}]
-                        })
-                            .sort({imdbRating: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    } catch (error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                break;
-            case "Year-new-old":
-                if (req.params.title === '*') {
-                    try {
-                        await Movie.find({
-                            "genres": req.params.genre
-                        })
-                            .sort({year: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    }
-                    catch(error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                else {
-                    try {
-                        await Movie.find({
-                            $and: [{"title": {$regex: req.params.title, $options: "i"}},
-                                {"genres": req.params.genre}]
-                        })
-                            .sort({year: 'descending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    } catch (error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                break;
-            case "Year-old-new":
-                if (req.params.title === '*') {
-                    try {
-                        await Movie.find({
-                            "genres": req.params.genre
-                        })
-                            .sort({year: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    }
-                    catch(error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                else {
-                    try {
-                        await Movie.find({
-                            $and: [{"title": {$regex: req.params.title, $options: "i"}},
-                                {"genres": req.params.genre}]
-                        })
-                            .sort({year: 'ascending'})
-                            .limit(5)
-                            .skip(5 * parseInt(req.params.page))
-                            .then(
-                                movies => res.send(movies)
-                            )
-                    } catch (error) {
-                        res.status(404).json({message: 'not found'})
-                        console.log('No movie with genre: ' + req.params.genre.toString());
-                    }
-                }
-                break;
-            default:
-                break;
+        try {
+            await Movie.find({
+                $and: [{"title": {$regex: req.params.title, $options: "i"}},
+                    {"genres": req.params.genre}]
+            })
+                .then(
+                    movies => res.send(movies)
+                )
+        } catch (error) {
+            res.status(404).json({message: 'not found'})
+            console.log('No movie with genre: ' + req.params.genre.toString());
         }
     }
-
 });
 
 // GET request for getting a specific movie by filtering a specific year

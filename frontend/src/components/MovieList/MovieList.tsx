@@ -1,11 +1,9 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useState} from 'react';
 import MovieBox from '../MovieBox/MovieBox';
 import { observer } from 'mobx-react';
 import Store from '../../mobx/store';
 import './MovieList.css';
 import '../MovieBox/MovieBox.css';
-import Paginater from "../Paginater/Paginater";
-
 
 
 const MovieList = () => {
@@ -15,19 +13,27 @@ const MovieList = () => {
     const store = useContext(Store);
     const { search_string, genre, sort, page } = store;
 
+    const movieChange = useCallback((json) => {
+        setMovies(json);
+    }, []);
+
+    const genreChange = useCallback(() => {
+        setGenre(genre);
+    }, []);
+
 
     useEffect( () => {
         if (genre !== "*") {
             let temp_search_string = search_string === "" ? "*" : search_string;
             console.log("update genre")
-            fetch("http://localhost:3000/api/movies/genre/" + temp_search_string + '/' + genre + '/' + sort + '/' + page,
+            fetch("http://it2810-19.idi.ntnu.no:3000/api/movies/genre/" + temp_search_string + '/' + genre + '/' + sort + '/' + page,
                 {
                     method: 'GET'
                 })
                 .then(res => res.json())
                 .then(json => {
-                    setMovies(json);
-                    setGenre(genre);
+                    movieChange(json);
+                    genreChange();
                 })
                 .catch(error => {
                     console.log('Could not get movies from DB');
@@ -36,13 +42,13 @@ const MovieList = () => {
         else {
             if (search_string) {
                 // non-empty search string -> search for the specified title
-                fetch("http://localhost:3000/api/movies/title/" + search_string + '/' + sort + '/' + page,
+                fetch("http://it2810-19.idi.ntnu.no:3000/api/movies/title/" + search_string + '/' + sort + '/' + page,
                     {
                         method: 'GET'
                     })
                     .then(res => res.json())
                     .then(json => {
-                        setMovies(json);
+                        movieChange(json);
                     })
                     .catch(error => {
                         console.log('Could not get movies from DB');
@@ -50,13 +56,13 @@ const MovieList = () => {
             }
             else {
                 // empty search string -> get all movies
-                fetch("http://localhost:3000/api/movies/" + sort + '/' + page,
+                fetch("http://it2810-19.idi.ntnu.no:3000/api/movies/" + sort + '/' + page,
                     {
                         method: 'GET'
                     })
                     .then(res => res.json())
                     .then(json => {
-                        setMovies(json);
+                        movieChange(json);
                     })
                     .catch(error => {
                         console.log('Could not get movies from DB');
